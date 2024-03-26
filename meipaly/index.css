@@ -1,0 +1,460 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+header{
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 80px;
+    border: 2px solid none;
+    width: 100%;
+    padding: 30px;
+    border-bottom:1px solid white ;
+}
+.header_container{
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 180px;
+}
+.container{
+   
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid none;
+    
+    
+    
+}
+header .logo{
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+header a.active{
+    color: red;
+}
+header a {
+    margin-right: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+        transition: 0.5s;
+       
+}
+
+.header_container a:hover{
+    color: red;
+}
+
+/* flex */
+.banner{
+    text-align: center;
+    height: 110vh;
+    min-height: 600px;
+    background-image: url(image-video/home_slider.jpg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+background-size: cover;
+justify-content: center;
+}
+.banner h2{
+    font-size: 70px;
+    margin: 30px 0;
+    text-align: center;
+}
+.banner p{
+    font-size: 25px;
+    font-weight: 500;
+}
+.banner button{
+    background-color:rgb(253, 64, 64);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+        transition: 0.5s;
+
+}
+.banner button:hover{
+    background: rgb(64, 19, 19);
+}
+.banner i{
+    font-size: 40px;
+    transform: translateY(100px);
+    animation-name:arrowAnimate ;
+    animation-duration: 2s  ;
+    animation-iteration-count: infinite;
+            margin: 70px;
+}
+/* transform */
+.carosel {
+    padding: 70px 0;
+    background: black;
+    text-align: center;
+    color: #888888;
+    display: flex;
+    font-weight: 900;
+}
+.carosel .item_container i {
+    font-size: 25px;
+    font-size: 50px;
+}
+
+.carosel .item_container p {
+    font-size:14px ;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+.carosel_item{
+    padding: 0 15px;
+}
+.carosel_item .item_container{
+    background: white;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.item_container::before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 0;
+    background: red;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+}
+.carosel_item:hover .item_container::before{
+    height: 100%;
+}
+.blogs{
+    background-color: #f3f3f3;
+    padding: 100px 0px;
+}
+.blogs_tilte{
+    padding: 40px;
+    text-align: center;
+}
+.blog_content {
+    display: grid;
+    /* mỗi 1fr tương đương với 1 cột */
+    /*  */
+    grid-template-columns: repeat(4, 1fr);
+    gap:  20px;
+}
+.blog_item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%) contrast(50%);
+   
+}
+.blog_content .blog_item1{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    
+}
+.blog_content .blog_item10{
+    grid-column: 3 / 5;
+        grid-row: 3 / 5;
+}
+.blog_item{
+    position: relative;
+}
+.blog_overplay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(224, 11, 11, 0.396);
+opacity: 0;
+transition: 0.3s;}
+.blog_text{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+        transition: 0.3s;
+        overflow: hidden;
+}
+.blog_icon {
+    position: absolute;
+    top: 85px;
+    right: 20px;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.blog_icon i {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: all .8s;
+}
+
+.blog_overplay:hover{
+    opacity: 1;
+}
+.blog_overplay:hover .blog_icon{
+    top: 20px;
+}
+.blog_overplay:hover .blog_text {
+bottom: 40px;
+}
+
+.slick-dots{
+    bottom: -30px;
+    
+}
+.slick-dots li button::before{
+    color: white;
+    font-size: 15px;
+    opacity: 0.25s;
+}
+.slick-dots li.slick-active button::before{
+    color: red;
+    opacity: 1;    
+}
+.number{
+    padding: 80px 0;
+    background: black;
+    color: white;
+}
+
+.number_container{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.number_item h2{
+    font-size: 50px;
+    padding: 5px;
+}
+.number_item p{
+font-size: 20px;
+padding: 5px;
+color: #888888;
+}
+@keyframes arrowAnimate {
+    from{
+transform: translateY(0px);
+opacity: 1;
+    }
+    to{
+        transform: translateY(100);
+opacity: 0;
+    }}
+ /* grid hệ thống giúp dàn lay out dễ dàng hơn */
+
+.carosel_title{
+    padding: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.carosel_title h2{
+    color: white;
+    font-size: 45px;
+    text-align: center; 
+    padding: 10px;
+}
+.carosel_title span {
+    color: #888888;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+        padding: 10px;
+}
+.carosel_title p{
+    color: #e62b4a ;
+    font-size: 14px;
+     font-weight: 300;
+      letter-spacing: 1px ;
+      text-align: center;
+        padding: 10px;
+}
+.blogs_tilte h3{
+    color: #888888;
+     font-size: 14px;
+    text-align: center;
+}
+.blogs_tilte h2{
+    font-size:50px;
+    text-align: center;
+    margin: 20px 0px 0px;
+   
+}
+.blogs_tilte p{
+color: #888888 ;
+font-weight: 700;
+ margin: 20px 0px 0px ;
+ text-align: center;
+}
+.experience{
+    background-image: url(image-video/bussiness_img_1.jpg);
+    background-size: cover;
+    padding: 100px 0px;
+    color: white;
+    width: 100%;
+    background-attachment: fixed;
+}
+.experience_title{
+    text-align: center;
+    padding: 20px;
+}
+.experience_title  p:first-of-type 
+{
+    font-size: 14px;
+    color: #e62b4a;
+    font-weight: 300;
+}
+.experience_title h2 {
+    font-size: 50px;
+    font-weight: 400;
+    padding: 10px;
+}
+.experience_title p:last-of-type {
+    font-size: 16px;
+    color: #888888;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.experience_content{
+    width: 75%;
+    margin: 30px auto 0;
+}
+.experience_content video {
+    width: 100%;
+    object-fit: cover;
+    border: none;
+    box-shadow: 0 2px 10px 1px rgb(0 0 0 / 50%);
+    outline: none;
+}
+.contact{
+    padding: 100px 0;
+}
+.contact_title{
+    text-align: center;
+}
+.contact_title h2{
+color: black;
+font-size: 50px;
+    font-weight: 400;
+}
+.contact_title p{
+    color: #888888;
+        font-weight: 400;
+        margin-top: 20px;
+}
+.contact__content {
+    width: 70%;
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+}
+.contact__map {
+    width: 60%;
+    
+}
+.contact_form {
+    width: 40%;
+}
+.contact_form form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+.contact_form input,textarea {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #888888;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+.but {
+    padding: 20px 30px;
+    background-color: rgb(3, 3, 3);
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;  
+    transition: 0.5s;   
+}
+.but:hover{
+    background: #e62b4a;
+    border: red;
+}
+
+
+footer {
+    background-color: #000;
+}
+.footer__content {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+}
+.footer__content p {
+    font-size: 15px;
+    color: aliceblue;
+}
+.footer__content a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(167, 166, 166, 0.2);
+    font-size: 15px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+.footer__content a:hover {
+    background-color:#e62b4a;
+}
+
+.backtotop{
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+    line-height: 60px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    visibility: hidden;
+}
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-top--fade-out {
+    opacity: 0.5;
+}
